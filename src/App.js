@@ -1,15 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Tickers from './components/Tickers';
+import React from "react";
+import "./App.css";
+import Currencies from "./components/Currencies";
 
 function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <h2>CRYPTO</h2>
+        <Currencies />
       </div>
-      <Tickers />
     </div>
   );
 }

@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class CryptoCurrency extends Component {
-    render() {
-        var {
-            id,
-            name,
-            symbol,
-            price_usd,
-            percent_change_1h,
-            percent_change_24h,
-            percent_change_7d,
-        } = this.props.data;
-        return (
-            < li className={`cryptocurrency${id}`
-            }>
-                <p className="cryptocurrency-name">{name} {symbol}</p>
-                <h1>${(price_usd).toFixed(2)}</h1>
-                <p>{percent_change_1h}% 1hr</p>
-                <p>{percent_change_24h}% 24hr</p>
-                <p>{percent_change_7d}% 7days</p>
-            </li >
-        );
+  render() {
+    var {
+      id,
+      name,
+      symbol,
+      rank,
+      first_historical_data,
+      last_historical_data
+    } = this.props.data;
 
-    }
+    return (
+      <li className={`cryptocurrency${id}`}>
+        <p>
+          {name} {symbol}
+        </p>
+        <h1>Rank {rank}</h1>
+        <p>
+          {new Date(first_historical_data).toUTCString()} First Historical Data
+        </p>
+        <p>
+          {new Date(last_historical_data).toUTCString()} Last Historical Data
+        </p>
+      </li>
+    );
+  }
 }
 
 export default CryptoCurrency;
