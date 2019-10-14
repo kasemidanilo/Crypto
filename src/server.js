@@ -1,7 +1,10 @@
 var express = require("express");
 var rp = require("request-promise");
+var cors = require('cors');
+
 
 var app = express();
+app.use(cors());
 
 app.listen(9797, () => {
     console.log("Server running on port 9797");
