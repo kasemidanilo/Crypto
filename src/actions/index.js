@@ -3,7 +3,7 @@ import { GET_DATA, FAILED_TO_LOAD_DATA } from "../constants/action-types";
 import axios from "axios";
 
 export default function getData() {
-  return function(dispatch) {
+  return function (dispatch) {
     axios
       .get("http://localhost:9797/lastest")
       .then(response => {
